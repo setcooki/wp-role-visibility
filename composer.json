@@ -1,0 +1,28 @@
+{
+  "name": "setcooki/wp-role-visibility",
+  "description": "Make posts and page only visible for selected roles",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Frank Mueller",
+      "email": "set@cooki.me",
+      "homepage": "http://set.cooki.me",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+      "issues": "https://github.com/setcooki/wp-role-visibility/issues"
+  },
+  "type": "wordpress-plugin",
+  "config": {
+    "vendor-dir": "lib/vendor"
+  },
+  "require": {
+    "php": ">=7.1.2"
+  },
+  "autoload":{
+    "psr-4": {
+      "Setcooki\\Wp\\Role\\Visibility\\": "src"
+    }
+  }
+}
