@@ -30,6 +30,11 @@ class MetaBox
     {
         $i = 0;
         $types = Plugin::$options['postTypes'];
+        $settings = json_decode(get_option('wprv_settings', new \stdClass()));
+        if(isset($settings->types))
+        {
+            $types = (array)$settings->types;
+        }
         foreach($types as $type)
         {
             add_meta_box

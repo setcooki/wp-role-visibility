@@ -32,6 +32,7 @@ class Plugin
            static::$options = array_merge(static::$options, $options);
         }
 
+        Admin::getInstance($this);
         Post::getInstance($this);
         MetaBox::getInstance($this);
     }
