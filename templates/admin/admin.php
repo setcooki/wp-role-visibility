@@ -40,6 +40,12 @@
                                     </select>
                                 </td>
                             </tr>
+                            <tr valign="top">
+                                <th scope="row"><?php _e('Redirect target (relative or absolute url)', ROLE_VISIBILITY_DOMAIN); ?></th>
+                                <td data-scope="types">
+                                    <input type="text" id="wprv_target" name="wprv_target" style="width:100%" value="<?php echo ((!empty($this->menu->settings->target)) ? $this->menu->settings->target : ''); ?>" />
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <p class="submit">

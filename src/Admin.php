@@ -50,6 +50,7 @@ class Admin
         {
             $settings = new \stdClass();
             $settings->types = (isset($_POST['wprv_types']) && !empty($_POST['wprv_types'])) ? (array)$_POST['wprv_types'] : [];
+            $settings->target = (isset($_POST['wprv_target']) && !empty($_POST['wprv_target'])) ? (string)$_POST['wprv_target'] : '';
             update_option('wprv_settings', json_encode($settings));
             $this->menu->success = true;
         }
@@ -57,6 +58,7 @@ class Admin
         $settings = json_decode(get_option('wprv_settings', new \stdClass()));
         $this->menu->settings = new \stdClass();
         $this->menu->settings->types = (array)$settings->types;
+        $this->menu->settings->target = (string)$settings->target;
 
         ob_start();
         require_once ROLE_VISIBILITY_DIR . '/templates/admin/admin.php';
