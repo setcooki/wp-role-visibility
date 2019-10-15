@@ -7,7 +7,7 @@ Author: Frank Mueller <set@cooki.me>
 Author URI: https://github.com/setcooki/
 Issues: https://github.com/setcooki/wp-role-visibility/issues
 Text Domain: wp-role-visibility
-Version: 0.0.1
+Version: 0.0.2
 */
 
 if(!defined('ROLE_VISIBILITY_DOMAIN'))
