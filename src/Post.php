@@ -58,6 +58,7 @@ class Post
      */
     public function preGetPost(\WP_Query $query)
     {
+        $exit = false;
         $settings = json_decode(get_option('wprv_settings', new \stdClass()));
 
         if(isset($settings->target) && !empty($settings->target))
@@ -82,16 +83,19 @@ class Post
                             }
                             if($e === sizeof($roles))
                             {
-                                wp_redirect($settings->target);
-                                exit;
+                                $exit = true;
                             }
                         }
                     }else{
-                        wp_redirect($settings->target);
-                        exit;
+                        $exit = true;
                     }
                 }
             }
+        }
+        if($exit)
+        {
+            wp_redirect(sprintf('%s?redirect=%s', $settings->target, urlencode($_SERVER['REQUEST_URI'])));
+            exit;
         }
     }
 
